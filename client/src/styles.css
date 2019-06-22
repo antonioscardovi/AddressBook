@@ -15,6 +15,11 @@ input.ng-valid {
   color: #dc3545;
 }
 
-table tr:hover {
+.tborder {
+  border: 2px solid #c4c4c4;
+}
+
+table tr .tfunction:hover {
   cursor: pointer;
+  background-color: #ccc;
 }

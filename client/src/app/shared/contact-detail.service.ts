@@ -12,10 +12,24 @@ export class ContactDetailService {
 
   constructor(private http: HttpClient) {}
 
-  postContactDetail(formData: ContactDetail) {
-    return this.http.post(this.rootURL + "/ContactDetail", formData);
+  // submit new contact
+  postContactDetail() {
+    return this.http.post(this.rootURL + "/ContactDetail", this.formData);
   }
 
+  // update contact
+  putContactDetail() {
+    return this.http.put(
+      this.rootURL + "/ContactDetail/" + this.formData.CTId,
+      this.formData
+    );
+  }
+
+  deleteContactDetail(id) {
+    return this.http.delete(this.rootURL + "/ContactDetail/" + id);
+  }
+
+  // clear form after submit
   refreshList() {
     this.http
       .get(this.rootURL + "/ContactDetail")
