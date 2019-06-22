@@ -35,4 +35,15 @@ export class ContactDetailComponent implements OnInit {
       PhoneNumber: ""
     };
   }
+
+  onSubmit(form: NgForm) {
+    this.service.postContactDetail(form.value).subscribe(
+      res => {
+        this.resetForm(form);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
 }

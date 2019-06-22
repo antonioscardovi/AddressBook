@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from "./app.component";
 import { ContactDetailsComponent } from "./contact-details/contact-details.component";
@@ -15,7 +16,7 @@ import { ContactDetailService } from "./shared/contact-detail.service";
     ContactDetailComponent,
     ContactDetailListComponent
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [ContactDetailService],
   bootstrap: [AppComponent]
 })
