@@ -29,13 +29,14 @@ namespace AddressBook
         {
             services
                 .AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                // Disabling automatic camelCase generation for JSON
                 .AddJsonOptions(options =>
                 {
                     var resolver = options.SerializerSettings.ContractResolver;
                     if (resolver != null)
                         (resolver as DefaultContractResolver).NamingStrategy = null;
                 });
-
+            // Connection to database I created in appsettings
             services.AddDbContext<ContactDetailContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
         }

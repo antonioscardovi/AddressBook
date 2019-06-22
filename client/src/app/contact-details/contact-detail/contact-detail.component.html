@@ -1,3 +1,100 @@
-<p>
-  contact-detail works!
-</p>
+<form #form="ngForm" autocomplete="off">
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i
+            class="fas fa-user-alt"
+            [class.green-icon]="FirstName.valid"
+            [class.red-icon]="FirstName.invalid && FirstName.touched"
+          ></i>
+        </div>
+      </div>
+      <input
+        name="FirstName"
+        #FirstName="ngModel"
+        [(ngModel)]="service.formData.FirstName"
+        class="form-control"
+        placeholder="First Name"
+        required
+        minlength="3"
+      />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i
+            class="fas fa-address-card"
+            [class.green-icon]="LastName.valid"
+            [class.red-icon]="LastName.invalid && LastName.touched"
+          ></i>
+        </div>
+      </div>
+      <input
+        name="LastName"
+        #LastName="ngModel"
+        [(ngModel)]="service.formData.LastName"
+        class="form-control"
+        placeholder="Last Name"
+        required
+        minlength="3"
+      />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i
+            class="fas fa-home"
+            [class.green-icon]="Address.valid"
+            [class.red-icon]="Address.invalid && Address.touched"
+          ></i>
+        </div>
+      </div>
+      <input
+        name="Address"
+        #Address="ngModel"
+        [(ngModel)]="service.formData.Address"
+        class="form-control"
+        placeholder="Address"
+        required
+        minlength="4"
+      />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i
+            class="fas fa-phone-alt"
+            [class.green-icon]="PhoneNumber.valid"
+            [class.red-icon]="PhoneNumber.invalid && PhoneNumber.touched"
+          ></i>
+        </div>
+      </div>
+      <input
+        name="PhoneNumber"
+        #PhoneNumber="ngModel"
+        [(ngModel)]="service.formData.PhoneNumber"
+        class="form-control"
+        placeholder="Phone Number"
+        required
+        maxlength="15"
+        minlength="9"
+      />
+    </div>
+  </div>
+  <div class="form-group">
+    <button
+      class="btn btn-success btn-lg btn-block"
+      type="submit"
+      [disabled]="form.invalid"
+    >
+      <i class="fas fa-database"></i> Submit
+    </button>
+  </div>
+</form>
