@@ -9,17 +9,7 @@ import { Component, OnInit } from "@angular/core";
 export class ContactDetailListComponent implements OnInit {
   constructor(private service: ContactDetailService) {}
 
-  ngOnInit() {}
-
-  // resetForm(form?: NgForm) {
-  //   if (form != null)
-  //     form.form.reset();
-  //   this.service.formData = {
-  //     CTId: 0,
-  //     FirstName: '',
-  //     LastName: '',
-  //     Address: '',
-  //     PhoneNumber: ''
-  //   }
-  // }
+  ngOnInit() {
+    this.service.refreshList();
+  }
 }
