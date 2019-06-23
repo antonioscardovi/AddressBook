@@ -4,19 +4,21 @@
       <th>First Name</th>
       <th>Last Name</th>
       <th>Address</th>
-      <th>Ph. Number</th>
+      <th></th>
+      <th></th>
+      <!-- <th>Ph. Number</th>  -->
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let pd of service.list">
-      <td>{{ pd.FirstName }}</td>
-      <td>{{ pd.LastName }}</td>
-      <td>{{ pd.Address }}</td>
-      <td>{{ pd.PhoneNumber }}</td>
-      <td class="tfunction" (click)="populateForm(pd)">
+    <tr class="clickable" *ngFor="let cd of service.list">
+      <td (click)="contactInfo(cd)">{{ cd.FirstName }}</td>
+      <td (click)="contactInfo(cd)">{{ cd.LastName }}</td>
+      <td>{{ cd.Address }}</td>
+      <!-- <td>{{ cd.PhoneNumber }}</td> -->
+      <td class="tfunction" (click)="populateForm(cd)">
         <i class="far fa-edit fa-lg text-info"></i>
       </td>
-      <td class="tfunction" (click)="onDelete(pd.CTId)">
+      <td class="tfunction" (click)="onDelete(cd.CTId)">
         <i class="far fa-trash-alt fa-lg text-danger"></i>
       </td>
     </tr>

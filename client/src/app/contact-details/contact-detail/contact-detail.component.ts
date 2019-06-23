@@ -3,6 +3,7 @@ import { ContactDetailService } from "src/app/shared/contact-detail.service";
 import { ContactDetail } from "src/app/shared/contact-detail.model";
 import { NgForm } from "@angular/forms";
 import { ToastrService } from "ngx-toastr";
+import { Condition } from "selenium-webdriver";
 
 @Component({
   selector: "app-contact-detail",

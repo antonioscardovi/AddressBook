@@ -18,8 +18,12 @@ export class ContactDetailListComponent implements OnInit {
     this.service.refreshList();
   }
 
-  populateForm(pd: ContactDetail) {
-    this.service.formData = Object.assign({}, pd);
+  // contactInfo(cd: ContactDetail) {
+  // show contact info modal
+  // }
+
+  populateForm(cd: ContactDetail) {
+    this.service.formData = Object.assign({}, cd);
   }
 
   onDelete(CTId) {

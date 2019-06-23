@@ -21,6 +21,7 @@ namespace AddressBook.Models
         [Column(TypeName = "nvarchar(100)")]
         public string Address { get; set; }
         [Required]
+        [Phone]
         [Column(TypeName = "nvarchar(15)")]
         public string PhoneNumber { get; set; }
     }

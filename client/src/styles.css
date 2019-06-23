@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  transition: 0.3s;
+}
+
 input.ng-touched.ng-invalid {
   border-color: #dc3545;
 }
@@ -19,7 +23,32 @@ input.ng-valid {
   border: 2px solid #c4c4c4;
 }
 
+.tfunction {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+table tr.clickable:hover {
+  cursor: pointer;
+}
+
 table tr .tfunction:hover {
   cursor: pointer;
   background-color: #ccc;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+footer a {
+  margin: 10px;
 }
