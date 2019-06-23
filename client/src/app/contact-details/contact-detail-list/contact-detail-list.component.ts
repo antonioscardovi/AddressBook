@@ -1,5 +1,7 @@
 import { ContactDetailService } from "./../../shared/contact-detail.service";
 import { Component, OnInit } from "@angular/core";
+import { ContactDetail } from "src/app/shared/contact-detail.model";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
   selector: "app-contact-detail-list",
@@ -7,19 +9,35 @@ import { Component, OnInit } from "@angular/core";
   styles: []
 })
 export class ContactDetailListComponent implements OnInit {
-  constructor(private service: ContactDetailService) {}
+  constructor(
+    private service: ContactDetailService,
+    private toastr: ToastrService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.service.refreshList();
+  }
 
-  // resetForm(form?: NgForm) {
-  //   if (form != null)
-  //     form.form.reset();
-  //   this.service.formData = {
-  //     CTId: 0,
-  //     FirstName: '',
-  //     LastName: '',
-  //     Address: '',
-  //     PhoneNumber: ''
-  //   }
+  // contactInfo(cd: ContactDetail) {
+  // show contact info modal
   // }
+
+  populateForm(cd: ContactDetail) {
+    this.service.formData = Object.assign({}, cd);
+  }
+
+  onDelete(CTId) {
+    if (confirm("Confirm Delete")) {
+      this.service.deleteContactDetail(CTId).subscribe(
+        res => {
+          this.service.refreshList();
+          this.toastr.warning("Deleted Successfully", "Contact Details");
+        },
+        err => {
+          console.log(err);
+          this.toastr.error("Failed to Delete");
+        }
+      );
+    }
+  }
 }

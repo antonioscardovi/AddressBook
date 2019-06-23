@@ -1,0 +1,13 @@
+C:\Users\anton\Documents\Antoniusz\Code\Projects\server\bin\Release\netcoreapp2.2\AddressBook.deps.json
+C:\Users\anton\Documents\Antoniusz\Code\Projects\server\bin\Release\netcoreapp2.2\AddressBook.runtimeconfig.json
+C:\Users\anton\Documents\Antoniusz\Code\Projects\server\bin\Release\netcoreapp2.2\AddressBook.runtimeconfig.dev.json
+C:\Users\anton\Documents\Antoniusz\Code\Projects\server\bin\Release\netcoreapp2.2\AddressBook.dll
+C:\Users\anton\Documents\Antoniusz\Code\Projects\server\bin\Release\netcoreapp2.2\AddressBook.pdb
+C:\Users\anton\Documents\Antoniusz\Code\Projects\server\obj\Release\netcoreapp2.2\AddressBook.csproj.CoreCompileInputs.cache
+C:\Users\anton\Documents\Antoniusz\Code\Projects\server\obj\Release\netcoreapp2.2\AddressBook.RazorAssemblyInfo.cache
+C:\Users\anton\Documents\Antoniusz\Code\Projects\server\obj\Release\netcoreapp2.2\AddressBook.RazorAssemblyInfo.cs
+C:\Users\anton\Documents\Antoniusz\Code\Projects\server\obj\Release\netcoreapp2.2\AddressBook.AssemblyInfoInputs.cache
+C:\Users\anton\Documents\Antoniusz\Code\Projects\server\obj\Release\netcoreapp2.2\AddressBook.AssemblyInfo.cs
+C:\Users\anton\Documents\Antoniusz\Code\Projects\server\obj\Release\netcoreapp2.2\AddressBook.RazorTargetAssemblyInfo.cache
+C:\Users\anton\Documents\Antoniusz\Code\Projects\server\obj\Release\netcoreapp2.2\AddressBook.dll
+C:\Users\anton\Documents\Antoniusz\Code\Projects\server\obj\Release\netcoreapp2.2\AddressBook.pdb

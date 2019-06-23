@@ -1,4 +1,5 @@
-<form #form="ngForm" autocomplete="off">
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="CTId" [value]="service.formData.CTId" />
   <div class="form-group">
     <div class="input-group">
       <div class="input-group-prepend">
@@ -95,6 +96,13 @@
       [disabled]="form.invalid"
     >
       <i class="fas fa-database"></i> Submit
+    </button>
+    <button
+      class="btn btn-info btn-lg btn-block"
+      type="submit"
+      [disabled]="form.invalid"
+    >
+      <i class="fas fa-edit"></i> Update
     </button>
   </div>
 </form>
