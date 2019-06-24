@@ -16,7 +16,7 @@
       <td (click)="contactInfo(cd)">{{ cd.LastName }}</td>
       <td>{{ cd.Address }}</td>
       <!-- <td>{{ cd.PhoneNumber }}</td> -->
-      <td class="tfunction" data-toggle="modal" data-target="#exampleModal">
+      <td class="tfunction" data-toggle="modal" data-target="#infoModal">
         <i class="far fa-eye fa-lg"></i>
       </td>
       <td class="tfunction" (click)="populateForm(cd)">
@@ -32,16 +32,16 @@
 <!-- Modal -->
 <div
   class="modal fade"
-  id="exampleModal"
+  id="infoModal"
   tabindex="-1"
   role="dialog"
-  aria-labelledby="exampleModalLabel"
+  aria-labelledby="infoModalLabel"
   aria-hidden="true"
 >
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">
+        <h5 class="modal-title" id="infoModalLabel">
           Contact Details
         </h5>
         <button
@@ -54,22 +54,28 @@
         </button>
       </div>
       <div class="modal-body">
-        <p class="details">
-          <span class="detail-label">First Name:</span> {{ cd.FirstName }}
-        </p>
-        <p class="details">
-          <span class="detail-label">Last Name:</span> {{ cd.LastName }}
-        </p>
-        <p class="details">
-          <span class="detail-label">Address:</span> {{ cd.Address }}
-        </p>
-        <p class="details">
-          <span class="detail-label">Phone Number:</span>
-          {{ cd.PhoneNumber }}
-        </p>
+        <div class="container">
+          <p class="details">
+            <span class="detail-label">First Name:</span> {{ cd.FirstName }}
+          </p>
+          <p class="details">
+            <span class="detail-label">Last Name:</span> {{ cd.LastName }}
+          </p>
+          <p class="details">
+            <span class="detail-label">Address:</span> {{ cd.Address }}
+          </p>
+          <p class="details">
+            <span class="detail-label">Phone Number:</span>
+            {{ cd.PhoneNumber }}
+          </p>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+        <button
+          type="button"
+          class="btn btn-primary btn-lg"
+          data-dismiss="modal"
+        >
           Close
         </button>
       </div>
