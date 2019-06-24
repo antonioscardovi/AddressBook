@@ -50,6 +50,8 @@ namespace AddressBook.Controllers
                 return BadRequest();
             }
 
+            
+
             _context.Entry(contactDetail).State = EntityState.Modified;
 
             try

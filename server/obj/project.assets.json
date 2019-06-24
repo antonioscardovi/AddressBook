@@ -12944,11 +12944,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\anton\\Documents\\Antoniusz\\Code\\Projects\\server\\AddressBook.csproj",
+      "projectUniqueName": "C:\\Users\\anton\\Documents\\Antoniusz\\Code\\Projects\\AddressBook\\server\\AddressBook.csproj",
       "projectName": "AddressBook",
-      "projectPath": "C:\\Users\\anton\\Documents\\Antoniusz\\Code\\Projects\\server\\AddressBook.csproj",
+      "projectPath": "C:\\Users\\anton\\Documents\\Antoniusz\\Code\\Projects\\AddressBook\\server\\AddressBook.csproj",
       "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\anton\\Documents\\Antoniusz\\Code\\Projects\\server\\obj\\",
+      "outputPath": "C:\\Users\\anton\\Documents\\Antoniusz\\Code\\Projects\\AddressBook\\server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
