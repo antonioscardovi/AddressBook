@@ -2,6 +2,8 @@ import { ContactDetailService } from "./../../shared/contact-detail.service";
 import { Component, OnInit } from "@angular/core";
 import { ContactDetail } from "src/app/shared/contact-detail.model";
 import { ToastrService } from "ngx-toastr";
+import { ContactDetailComponent } from "../contact-detail/contact-detail.component";
+import { ContactDetailsComponent } from "../contact-details.component";
 
 @Component({
   selector: "app-contact-detail-list",
@@ -18,9 +20,9 @@ export class ContactDetailListComponent implements OnInit {
     this.service.refreshList();
   }
 
-  // contactInfo(cd: ContactDetail) {
-  // show contact info modal
-  // }
+  contactInfo(id) {
+    this.service.getContactDetail(id);
+  }
 
   populateForm(cd: ContactDetail) {
     this.service.formData = Object.assign({}, cd);
