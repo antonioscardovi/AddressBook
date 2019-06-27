@@ -32,59 +32,62 @@
       <td class="tfunction" (click)="onDelete(cd.CTId)">
         <i class="far fa-trash-alt fa-lg text-danger"></i>
       </td>
-      <div
-        class="modal fade"
-        id="infoModal"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="infoModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="infoModalLabel">
-                Contact Details
-              </h5>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="container">
-                <p class="details">
-                  <span class="detail-label">First Name:</span>
-                  {{ cd.FirstName }}
-                </p>
-                <p class="details">
-                  <span class="detail-label">Last Name:</span> {{ cd.LastName }}
-                </p>
-                <p class="details">
-                  <span class="detail-label">Address:</span> {{ cd.Address }}
-                </p>
-                <p class="details">
-                  <span class="detail-label">Phone Number:</span>
-                  {{ cd.PhoneNumber }}
-                </p>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-primary btn-lg"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
     </tr>
   </tbody>
 </table>
+
+<div
+  class="modal fade"
+  id="infoModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="infoModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="infoModalLabel">
+          Contact Details
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <p class="details">
+            <span class="detail-label">First Name:</span>
+            {{ currentContactInfo.FirstName }}
+          </p>
+          <p class="details">
+            <span class="detail-label">Last Name:</span>
+            {{ currentContactInfo.LastName }}
+          </p>
+          <p class="details">
+            <span class="detail-label">Address:</span>
+            {{ currentContactInfo.Address }}
+          </p>
+          <p class="details">
+            <span class="detail-label">Phone Number:</span>
+            {{ currentContactInfo.PhoneNumber }}
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-primary btn-lg"
+          data-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -16,12 +16,16 @@ export class ContactDetailListComponent implements OnInit {
     private toastr: ToastrService
   ) {}
 
+  currentContactInfo: any = {};
+
   ngOnInit() {
     this.service.refreshList();
   }
 
   contactInfo(id) {
-    this.service.getContactDetail(id);
+    this.service.getContactDetail(id).subscribe(res => {
+      this.currentContactInfo = res;
+    });
   }
 
   populateForm(cd: ContactDetail) {
