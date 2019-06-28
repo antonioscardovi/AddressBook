@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
+import { NgxPaginationModule } from "ngx-pagination";
 import { ToastrModule } from "ngx-toastr";
 import { AppComponent } from "./app.component";
 import { ContactDetailsComponent } from "./contact-details/contact-details.component";
@@ -23,7 +24,8 @@ import { ContactDetailService } from "./shared/contact-detail.service";
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgxPaginationModule
   ],
   providers: [ContactDetailService],
   bootstrap: [AppComponent]

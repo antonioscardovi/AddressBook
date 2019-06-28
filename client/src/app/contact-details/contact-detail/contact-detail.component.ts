@@ -69,7 +69,7 @@ export class ContactDetailComponent implements OnInit {
       },
       err => {
         console.log(err);
-        this.toastr.error("Failed to Submit");
+        this.toastr.error("Failed to Update");
       }
     );
   }

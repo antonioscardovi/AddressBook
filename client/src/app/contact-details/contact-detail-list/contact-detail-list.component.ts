@@ -11,12 +11,12 @@ import { ContactDetailsComponent } from "../contact-details.component";
   styles: []
 })
 export class ContactDetailListComponent implements OnInit {
+  currentContactInfo: any = {};
+
   constructor(
     private service: ContactDetailService,
     private toastr: ToastrService
   ) {}
-
-  currentContactInfo: any = {};
 
   ngOnInit() {
     this.service.refreshList();

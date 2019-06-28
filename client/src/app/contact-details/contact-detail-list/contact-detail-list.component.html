@@ -12,7 +12,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let cd of service.list; index as i">
+    <tr
+      *ngFor="
+        let cd of service.list | paginate: { itemsPerPage: 5, currentPage: p };
+        index as i
+      "
+    >
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ cd.FirstName }}</td>
       <td>{{ cd.LastName }}</td>
@@ -35,6 +40,8 @@
     </tr>
   </tbody>
 </table>
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
 
 <div
   class="modal fade"
@@ -63,19 +70,23 @@
         <div class="container">
           <p class="details">
             <span class="detail-label">First Name:</span>
-            {{ currentContactInfo.FirstName }}
+            <span class="detail-value"
+              >{{ currentContactInfo.FirstName }}
+            </span>
           </p>
           <p class="details">
             <span class="detail-label">Last Name:</span>
-            {{ currentContactInfo.LastName }}
+            <span class="detail-value">{{ currentContactInfo.LastName }} </span>
           </p>
           <p class="details">
             <span class="detail-label">Address:</span>
-            {{ currentContactInfo.Address }}
+            <span class="detail-value">{{ currentContactInfo.Address }} </span>
           </p>
           <p class="details">
             <span class="detail-label">Phone Number:</span>
-            {{ currentContactInfo.PhoneNumber }}
+            <span class="detail-value"
+              >{{ currentContactInfo.PhoneNumber }}
+            </span>
           </p>
         </div>
       </div>

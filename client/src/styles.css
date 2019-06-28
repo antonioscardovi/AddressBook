@@ -36,10 +36,15 @@ input.ng-valid {
   border-left: 2px solid #666;
   padding: 20px;
   box-shadow: 1px 1px 3px #333;
+  font-size: 1.5rem;
 }
 
 .detail-label {
   font-weight: bold;
+}
+
+.detail-value {
+  padding-left: 10px;
 }
 
 table tr.clickable:hover {
