@@ -68,7 +68,7 @@ ipch/
 **/App_Data/*.sdf
 
 # Visual Studio temp something
-server/.vs/
+!.vs/*
 
 # dotnet stuff
 project.lock.json
@@ -81,7 +81,11 @@ project.lock.json
 .idea/
 
 # Visual Studio Code
-server/.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 # Output folder used by Webpack or other FE stuff
 **/node_modules/*

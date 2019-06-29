@@ -47,6 +47,11 @@ input.ng-valid {
   padding-left: 10px;
 }
 
+.pagination {
+  position: absolute;
+  bottom: -50px;
+}
+
 table tr.clickable:hover {
   cursor: pointer;
 }
@@ -67,4 +72,11 @@ footer {
 
 footer a {
   margin: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .pagination {
+    position: relative;
+    bottom: 0;
+  }
 }
