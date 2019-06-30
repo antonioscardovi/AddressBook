@@ -51,12 +51,4 @@ export class ContactDetailService {
       .toPromise()
       .then(res => (this.list = res as ContactDetail[]));
   }
-
-  // searchContactDetail(keyword: string) {
-  //   let apiUrl = `${this.rootURL}/ContactDetail/Search/`;
-  //           return this.http
-  //             .get(`${this.apiUrl}${keyword}`)
-  //             .toPromise()
-  //             .then(res => (this.list = res as ContactDetail[]));
-  //         }
 }

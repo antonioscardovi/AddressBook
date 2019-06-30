@@ -34,15 +34,25 @@ namespace AddressBook.Controllers
         [HttpGet("Search/{keyword}")]
         public IActionResult Search(string keyword)
         {
-            try
+            
+            var firstname = _context.ContactDetail.Where(p => p.FirstName.Contains(keyword)).ToList();
+            var lastname = _context.ContactDetail.Where(p => p.LastName.Contains(keyword)).ToList();
+            var address = _context.ContactDetail.Where(p => p.Address.Contains(keyword)).ToList();
+
+            if (firstname.Count > 0)
             {
-                var contacts = _context.ContactDetail.Where(p => p.FirstName.Contains(keyword)).ToList();
-                return Ok(contacts);
+                return Ok(firstname);
             }
-            catch
+            else if (lastname.Count > 0)
             {
-                return BadRequest();
+                return Ok(lastname);
             }
+            else if (address.Count > 0)
+            {
+                return Ok(address);
+            }
+            else return BadRequest();
+            
         }
 
         // GET: api/ContactDetail/5
