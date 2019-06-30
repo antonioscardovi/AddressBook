@@ -9,8 +9,17 @@ export class ContactDetailService {
   formData: ContactDetail;
   readonly rootURL = "http://localhost:60809/api";
   list: ContactDetail[];
+  apiUrl: any;
 
   constructor(private http: HttpClient) {}
+
+  // contact list
+  refreshList() {
+    this.http
+      .get(this.rootURL + "/ContactDetail")
+      .toPromise()
+      .then(res => (this.list = res as ContactDetail[]));
+  }
 
   // single contact
   getContactDetail(id) {
@@ -35,11 +44,19 @@ export class ContactDetailService {
     return this.http.delete(this.rootURL + "/ContactDetail/" + id);
   }
 
-  // contact list
-  refreshList() {
-    this.http
-      .get(this.rootURL + "/ContactDetail")
+  // search contacts
+  searchContactDetail(keyword: string) {
+    return this.http
+      .get(this.rootURL + "/ContactDetail/Search/" + keyword)
       .toPromise()
       .then(res => (this.list = res as ContactDetail[]));
   }
+
+  // searchContactDetail(keyword: string) {
+  //   let apiUrl = `${this.rootURL}/ContactDetail/Search/`;
+  //           return this.http
+  //             .get(`${this.apiUrl}${keyword}`)
+  //             .toPromise()
+  //             .then(res => (this.list = res as ContactDetail[]));
+  //         }
 }

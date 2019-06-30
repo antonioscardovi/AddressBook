@@ -20,11 +20,29 @@ namespace AddressBook.Controllers
             _context = context;
         }
 
+
+
         // GET: api/ContactDetail
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ContactDetail>>> GetContactDetail()
         {
-            return await _context.ContactDetail.ToListAsync();
+            
+                return await _context.ContactDetail.ToListAsync();
+        }
+
+        // GET: api/ContactDetail/search/firstname
+        [HttpGet("Search/{keyword}")]
+        public IActionResult Search(string keyword)
+        {
+            try
+            {
+                var contacts = _context.ContactDetail.Where(p => p.FirstName.Contains(keyword)).ToList();
+                return Ok(contacts);
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
 
         // GET: api/ContactDetail/5
