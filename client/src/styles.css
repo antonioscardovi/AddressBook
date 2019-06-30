@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 * {
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 input.ng-touched.ng-invalid {
@@ -36,10 +36,20 @@ input.ng-valid {
   border-left: 2px solid #666;
   padding: 20px;
   box-shadow: 1px 1px 3px #333;
+  font-size: 1.5rem;
 }
 
 .detail-label {
   font-weight: bold;
+}
+
+.detail-value {
+  padding-left: 10px;
+}
+
+.pagination {
+  position: absolute;
+  bottom: -50px;
 }
 
 table tr.clickable:hover {
@@ -62,4 +72,11 @@ footer {
 
 footer a {
   margin: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .pagination {
+    position: relative;
+    bottom: 0;
+  }
 }

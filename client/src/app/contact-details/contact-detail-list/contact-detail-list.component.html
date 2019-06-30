@@ -1,6 +1,7 @@
 <table class="table table-hover table-striped tborder">
   <thead>
     <tr>
+      <th scope="col">#</th>
       <th>First Name</th>
       <th>Last Name</th>
       <th>Address</th>
@@ -11,12 +12,23 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="clickable" *ngFor="let cd of service.list">
-      <td (click)="contactInfo(cd)">{{ cd.FirstName }}</td>
-      <td (click)="contactInfo(cd)">{{ cd.LastName }}</td>
+    <tr
+      *ngFor="
+        let cd of service.list | paginate: { itemsPerPage: 5, currentPage: p };
+        index as i
+      "
+    >
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ cd.FirstName }}</td>
+      <td>{{ cd.LastName }}</td>
       <td>{{ cd.Address }}</td>
       <!-- <td>{{ cd.PhoneNumber }}</td> -->
-      <td class="tfunction" data-toggle="modal" data-target="#infoModal">
+      <td
+        (click)="contactInfo(cd.CTId)"
+        class="tfunction"
+        data-toggle="modal"
+        data-target="#infoModal"
+      >
         <i class="far fa-eye fa-lg"></i>
       </td>
       <td class="tfunction" (click)="populateForm(cd)">
@@ -29,7 +41,11 @@
   </tbody>
 </table>
 
-<!-- Modal -->
+<pagination-controls
+  class="pagination"
+  (pageChange)="p = $event"
+></pagination-controls>
+
 <div
   class="modal fade"
   id="infoModal"
@@ -56,17 +72,24 @@
       <div class="modal-body">
         <div class="container">
           <p class="details">
-            <span class="detail-label">First Name:</span> {{ cd.FirstName }}
+            <span class="detail-label">First Name:</span>
+            <span class="detail-value"
+              >{{ currentContactInfo.FirstName }}
+            </span>
           </p>
           <p class="details">
-            <span class="detail-label">Last Name:</span> {{ cd.LastName }}
+            <span class="detail-label">Last Name:</span>
+            <span class="detail-value">{{ currentContactInfo.LastName }} </span>
           </p>
           <p class="details">
-            <span class="detail-label">Address:</span> {{ cd.Address }}
+            <span class="detail-label">Address:</span>
+            <span class="detail-value">{{ currentContactInfo.Address }} </span>
           </p>
           <p class="details">
             <span class="detail-label">Phone Number:</span>
-            {{ cd.PhoneNumber }}
+            <span class="detail-value"
+              >{{ currentContactInfo.PhoneNumber }}
+            </span>
           </p>
         </div>
       </div>
@@ -82,4 +105,5 @@
     </div>
   </div>
 </div>
-<!-- End modal -->
+
+<app-confirm-dialog></app-confirm-dialog>

@@ -20,11 +20,39 @@ namespace AddressBook.Controllers
             _context = context;
         }
 
+
+
         // GET: api/ContactDetail
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ContactDetail>>> GetContactDetail()
         {
-            return await _context.ContactDetail.ToListAsync();
+            
+                return await _context.ContactDetail.ToListAsync();
+        }
+
+        // GET: api/ContactDetail/search/firstname
+        [HttpGet("Search/{keyword}")]
+        public IActionResult Search(string keyword)
+        {
+            
+            var firstname = _context.ContactDetail.Where(p => p.FirstName.Contains(keyword)).ToList();
+            var lastname = _context.ContactDetail.Where(p => p.LastName.Contains(keyword)).ToList();
+            var address = _context.ContactDetail.Where(p => p.Address.Contains(keyword)).ToList();
+
+            if (firstname.Count > 0)
+            {
+                return Ok(firstname);
+            }
+            else if (lastname.Count > 0)
+            {
+                return Ok(lastname);
+            }
+            else if (address.Count > 0)
+            {
+                return Ok(address);
+            }
+            else return BadRequest();
+            
         }
 
         // GET: api/ContactDetail/5
@@ -50,7 +78,12 @@ namespace AddressBook.Controllers
                 return BadRequest();
             }
 
-            
+            var numberCheck = _context.ContactDetail.Where(u => u.PhoneNumber == contactDetail.PhoneNumber).FirstOrDefault();
+
+            if (numberCheck != null)
+            {
+                return BadRequest();
+            }
 
             _context.Entry(contactDetail).State = EntityState.Modified;
 
@@ -77,6 +110,13 @@ namespace AddressBook.Controllers
         [HttpPost]
         public async Task<ActionResult<ContactDetail>> PostContactDetail(ContactDetail contactDetail)
         {
+            var numberCheck = _context.ContactDetail.Where(u => u.PhoneNumber == contactDetail.PhoneNumber).FirstOrDefault();
+
+            if (numberCheck != null)
+            {
+                return BadRequest();
+            }
+
             _context.ContactDetail.Add(contactDetail);
             await _context.SaveChangesAsync();
 
