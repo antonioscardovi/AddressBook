@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ContactDetailService } from "../shared/contact-detail.service";
 import { ToastrService } from "ngx-toastr";
+import { HttpErrorResponse } from "@angular/common/http";
 
 @Component({
   selector: "app-contact-details",
@@ -17,6 +18,11 @@ export class ContactDetailsComponent implements OnInit {
 
   searchContact(keyword: string) {
     console.log(keyword);
-    this.service.searchContactDetail(keyword);
+    this.service
+      .searchContactDetail(keyword)
+      .catch((err: HttpErrorResponse) => {
+        console.log(err);
+        this.toastr.error("Wrong Parameters");
+      });
   }
 }
