@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 * {
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 input.ng-touched.ng-invalid {

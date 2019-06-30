@@ -11,13 +11,16 @@ import { ContactDetailsComponent } from "./contact-details/contact-details.compo
 import { ContactDetailComponent } from "./contact-details/contact-detail/contact-detail.component";
 import { ContactDetailListComponent } from "./contact-details/contact-detail-list/contact-detail-list.component";
 import { ContactDetailService } from "./shared/contact-detail.service";
+import { ConfirmDialogComponent } from "./confirm-dialog/confirm-dialog.component";
+import { ConfirmDialogService } from "./confirm-dialog/confirm-dialog.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactDetailsComponent,
     ContactDetailComponent,
-    ContactDetailListComponent
+    ContactDetailListComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,7 @@ import { ContactDetailService } from "./shared/contact-detail.service";
     ToastrModule.forRoot(),
     NgxPaginationModule
   ],
-  providers: [ContactDetailService],
+  providers: [ContactDetailService, ConfirmDialogService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
