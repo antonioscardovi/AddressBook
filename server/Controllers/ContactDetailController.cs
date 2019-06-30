@@ -78,7 +78,12 @@ namespace AddressBook.Controllers
                 return BadRequest();
             }
 
-            
+            var numberCheck = _context.ContactDetail.Where(u => u.PhoneNumber == contactDetail.PhoneNumber).FirstOrDefault();
+
+            if (numberCheck != null)
+            {
+                return BadRequest();
+            }
 
             _context.Entry(contactDetail).State = EntityState.Modified;
 
@@ -105,6 +110,13 @@ namespace AddressBook.Controllers
         [HttpPost]
         public async Task<ActionResult<ContactDetail>> PostContactDetail(ContactDetail contactDetail)
         {
+            var numberCheck = _context.ContactDetail.Where(u => u.PhoneNumber == contactDetail.PhoneNumber).FirstOrDefault();
+
+            if (numberCheck != null)
+            {
+                return BadRequest();
+            }
+
             _context.ContactDetail.Add(contactDetail);
             await _context.SaveChangesAsync();
 
