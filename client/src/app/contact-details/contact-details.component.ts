@@ -18,11 +18,15 @@ export class ContactDetailsComponent implements OnInit {
 
   searchContact(keyword: string) {
     console.log(keyword);
+    if (keyword == "") {
+      this.toastr.error("Wrong Parameters");
+      return 0;
+    }
     this.service
       .searchContactDetail(keyword)
       .catch((err: HttpErrorResponse) => {
         console.log(err);
-        this.toastr.error("Wrong Parameters");
+        this.toastr.error("No Results");
       });
   }
 }

@@ -35,6 +35,8 @@ namespace AddressBook.Controllers
         [HttpGet("Search/{keyword}")]
         public IActionResult Search(string keyword)
         {
+
+           
             
             var firstname = _context.ContactDetail.Where(p => p.FirstName.Contains(keyword)).ToList();
             var lastname = _context.ContactDetail.Where(p => p.LastName.Contains(keyword)).ToList();
