@@ -1,6 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 * {
   transition: 0.2s;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 3rem;
 }
 
 small {
@@ -26,7 +32,8 @@ input.ng-valid {
 }
 
 .tborder {
-  border: 2px solid #c4c4c4;
+  /* border: 2px solid #a1a1a1; */
+  box-shadow: 1px 1px 5px 1px #666;
 }
 
 .tfunction {
@@ -47,6 +54,7 @@ input.ng-valid {
 
 .detail-value {
   padding-left: 10px;
+  font-family: "Roboto", sans-serif;
 }
 
 .pagination {

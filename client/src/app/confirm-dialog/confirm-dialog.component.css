@@ -19,7 +19,7 @@
 }
 
 .confirm-message {
-  font-family: "Times New Roman", Times, serif;
+  font-family: inherit;
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 0px;
@@ -32,23 +32,23 @@
 }
 
 .btn-yes {
-  background-color: #f4516c;
+  background-color: #dc3545;
   color: white;
   padding: 10px 25px;
   margin: 20px;
 }
 
 .btn-yes:hover {
-  background-color: #f86b83;
+  background-color: #fa5671;
 }
 
 .btn-no {
-  background-color: #716aca;
+  background-color: #2199e8;
   color: white;
   padding: 10px 25px;
   margin: 20px;
 }
 
 .btn-no:hover {
-  background-color: #8b86ce;
+  background-color: #59b2ee;
 }
