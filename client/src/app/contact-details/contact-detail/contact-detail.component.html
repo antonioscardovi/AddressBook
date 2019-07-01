@@ -21,6 +21,9 @@
         minlength="3"
       />
     </div>
+    <small [class.d-none]="FirstName.valid || FirstName.untouched"
+      >First name is required</small
+    >
   </div>
   <div class="form-group">
     <div class="input-group">
@@ -43,6 +46,9 @@
         minlength="3"
       />
     </div>
+    <small [class.d-none]="LastName.valid || LastName.untouched"
+      >Last name is required</small
+    >
   </div>
   <div class="form-group">
     <div class="input-group">
@@ -65,6 +71,9 @@
         minlength="4"
       />
     </div>
+    <small [class.d-none]="Address.valid || Address.untouched"
+      >Address is required</small
+    >
   </div>
   <div class="form-group">
     <div class="input-group">
@@ -85,9 +94,15 @@
         placeholder="Phone Number"
         required
         maxlength="15"
-        minlength="9"
+        minlength="10"
       />
     </div>
+    <small [class.d-none]="PhoneNumber.valid || PhoneNumber.untouched"
+      >Phone number must be 10 digits (required)</small
+    >
+    <small [class.d-none]="numberExists == false"
+      >Phone number already exists</small
+    >
   </div>
   <div class="form-group">
     <button

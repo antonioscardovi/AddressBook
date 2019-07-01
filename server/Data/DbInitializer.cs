@@ -26,9 +26,9 @@ namespace AddressBook.Models
             new ContactDetail{FirstName="Laura",LastName="Norman",Address="8604 Briarwood St.",PhoneNumber="(770)5903857"},
             new ContactDetail{FirstName="Nino",LastName="Olivetto",Address="61 Military St.",PhoneNumber="(359)8683931"},
             new ContactDetail{FirstName="Cary",LastName="Pope",Address="478 North Province",PhoneNumber="4259559798"},
-            new ContactDetail{FirstName="Carl",LastName="Jandreau",Address="2842  Calvin Street",PhoneNumber="443-373-0735"},
-            new ContactDetail{FirstName="Henry",LastName="Tanaka",Address="4772  White River Way",PhoneNumber="801-482-0999"},
-            new ContactDetail{FirstName="Elinor",LastName="Nesbitt",Address="1845  Gregory Lane",PhoneNumber="502-487-2105"}
+            new ContactDetail{FirstName="Carl",LastName="Jandreau",Address="2842 Calvin Street",PhoneNumber="443-373-0735"},
+            new ContactDetail{FirstName="Henry",LastName="Tanaka",Address="4772 White River Way",PhoneNumber="801-482-0999"},
+            new ContactDetail{FirstName="Elinor",LastName="Nesbitt",Address="1845 Gregory Lane",PhoneNumber="502-487-2105"}
             };
             foreach (ContactDetail c in contacts)
             {

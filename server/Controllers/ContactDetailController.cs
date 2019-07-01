@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AddressBook.Models;
+using System.Net;
 
 namespace AddressBook.Controllers
 {
@@ -30,7 +31,7 @@ namespace AddressBook.Controllers
                 return await _context.ContactDetail.ToListAsync();
         }
 
-        // GET: api/ContactDetail/search/firstname
+        // GET: api/ContactDetail/search/keyword
         [HttpGet("Search/{keyword}")]
         public IActionResult Search(string keyword)
         {
@@ -82,7 +83,7 @@ namespace AddressBook.Controllers
 
             if (numberCheck != null)
             {
-                return BadRequest();
+                return Conflict();
             }
 
             _context.Entry(contactDetail).State = EntityState.Modified;
@@ -106,6 +107,11 @@ namespace AddressBook.Controllers
             return NoContent();
         }
 
+        private IActionResult Content(HttpStatusCode conflict, ContactDetail numberCheck)
+        {
+            throw new NotImplementedException();
+        }
+
         // POST: api/ContactDetail
         [HttpPost]
         public async Task<ActionResult<ContactDetail>> PostContactDetail(ContactDetail contactDetail)
@@ -114,7 +120,7 @@ namespace AddressBook.Controllers
 
             if (numberCheck != null)
             {
-                return BadRequest();
+                return Conflict();
             }
 
             _context.ContactDetail.Add(contactDetail);
