@@ -57,7 +57,8 @@ export class ContactDetailComponent implements OnInit {
       err => {
         console.log(err);
         if (err.status == 409) {
-          console.log("HTTP Code 409 - Conflict", err);
+          this.toastr.error("Failed to Update");
+          return (this.numberExists = true);
         }
         this.toastr.error("Failed to Submit");
       }
@@ -74,7 +75,6 @@ export class ContactDetailComponent implements OnInit {
       err => {
         console.log(err);
         if (err.status == 409) {
-          console.log("HTTP Code 409 - Conflict", err);
           this.toastr.error("Failed to Update");
           return (this.numberExists = true);
         }
